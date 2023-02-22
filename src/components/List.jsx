@@ -3,21 +3,16 @@ import styled from "styled-components";
 
 import { useSelector } from "react-redux"; //useSelector 훅 임포트, state값을 조회한다
 import { useDispatch } from "react-redux"; //useDispatch 훅 임포트, 액션명령을 주고 받는다
-import { updateTodo, deleteTodo } from "../redux/modules/todos"; // 액션객체 임포트
-import { useNavigate } from "react-router-dom"; // 페이지 이동을 위한 useNavigate훅 임포트
+import { deleteTodo } from "../redux/modules/todos"; // 액션객체 임포트
 
 function List() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const todoStore = useSelector((state) => state.todos); //store 연결확인
 
   // dispatch로 명령 전달
   const onDelete = (id) => {
     dispatch(deleteTodo(id));
-  };
-  const onToggle = (id) => {
-    dispatch(updateTodo(id));
   };
 
   return (
@@ -27,7 +22,6 @@ function List() {
 
       <StListBox>
         {todoStore.map((todo) => {
-          if (todo.isDone === false) {
             return (
               <StTodoBox key={todo.id}>
                 
@@ -40,10 +34,6 @@ function List() {
                 
               </StTodoBox>
             );
-          } 
-          else {
-            return null;
-          }
         })}
       </StListBox>
 
@@ -67,8 +57,8 @@ const StListBox = styled.div`
   gap: 24px;
 `;
 const StTodoBox = styled.div`
-  width: 160px;
-  height: 230px;
+  width: 150px;
+  height: 219px;
   border: solid 2px #1b1b1b;
   border-radius: 9px;
   // 배경색만 투명도 조절(만약 전체 투명도 조절하고 싶으면 opacity: 0.5;)

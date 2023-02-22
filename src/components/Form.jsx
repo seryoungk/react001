@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addTodo } from "../redux/modules/todos"; //액션객체 임포트
 
 function Form() {
@@ -13,12 +13,11 @@ function Form() {
     id: 0,
     title: "",
     body: "",
-    isDone: false,
   });
   // todo의 초기값을 이렇게 정해준다.
   // input을 통해 들어오는 변화값을 받는 state
 
-  const nextId = useRef(3);
+  const nextId = useRef(4);
   // id값 주기
 
   // input의 onChange 이벤트 핸들러
@@ -39,7 +38,7 @@ function Form() {
     // console.log(nextId)
     //dispatch에 액션을 담아서 리듀서로 보낸다. 여기서 보낸 값이 액션객체의 payload에 들어감
     dispatch(addTodo({ ...todo }));
-    setTodo({ id: 0, title: "", body: "", isDone: false }); //이벤트(클릭)이 끝날 때 초기화-> input창을 빈칸으로 만들어 주는 역할!
+    setTodo({ id: 0, title: "", body: ""}); //이벤트(클릭)이 끝날 때 초기화-> input창을 빈칸으로 만들어 주는 역할!
   };
 
   return (
@@ -53,7 +52,7 @@ function Form() {
           //  useState의 객체todo의 title(키)를 value로 가져온다
           onChange={onChange}
           // 입력값에 변화가 생긴다면 onChange함수를 실행하라는 뜻
-          placeholder="이름을 입력하세요..."
+          placeholder="이름을 입력하세요"
           required
         />
         {/* 제목에 들어오는 내용은 text 타입, title이라는 이름을 가지고, todo의 title을 value로 만든다는 뜻 */}
@@ -65,7 +64,7 @@ function Form() {
           // useState의 객체todo의 body(키)를 value로 가져온다 
           onChange={onChange}
           // 입력값에 변화가 생긴다면 onChange함수를 실행하라는 뜻
-          placeholder="내용을 입력하세요..."
+          placeholder="내용을 입력하세요"
           required
         />
         {/* 내용에 들어오는 내용은 text 타입, body라는 이름을 가지고, todo의 body를 value로 만든다는 뜻 */}
@@ -99,14 +98,11 @@ const StInputGroup = styled.div`
   flex-direction: column;
   gap: 10px;
   margin-top: 20px;
-  padding-top: 25px;
+  padding-top: 18px;
   height: 200px;
   
 `;
 
-const StLabel = styled.label`
-  font-size: 1.2rem; //최상위 엘리먼트의 font size의 1.2배 크기
-`;
 const StButton = styled.button`
 /* 전송 버튼 */
 border: none;
@@ -118,7 +114,7 @@ border: none;
   font-weight: bold;
   font-size: 1rem;
   color: black;
-  margin-left: 135px;
+  margin-left: 118px;
   margin-top:15px;
   /* 버튼에 마우스 올릴 때 반응 */
   &:hover {
@@ -133,10 +129,10 @@ const StInput = styled.input`
   box-sizing: border-box;
   border-radius: 7px;
   border: none;
-  width: 200px;
+  width: 180px;
   height: 35px;
   color: black;
-  padding-left: 20px;
+  padding-left: 15px;
   /* 첫번째 요소에만 오른쪽 여백 */
   &:first-of-type {
     margin-right: 50px;

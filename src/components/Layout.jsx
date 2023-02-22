@@ -22,7 +22,7 @@ const StBackground = styled.div`
 const StLayout = styled.div`
     /* 레이아웃의 최대, 최소 너비 지정 */
     max-width: 1000px;
-    min-width: 500px;
+    min-width: 200px;
     
     /* todoBox가 일정 크기를 넘어가면 이미지가 잘리는 현상때문에 추가 */
     min-height: 100vh;
