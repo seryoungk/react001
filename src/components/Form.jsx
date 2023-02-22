@@ -42,9 +42,11 @@ function Form() {
   };
 
   return (
+    
     <StForm onSubmit={onSubmit}> 
     {/* 추가하기 버튼을 누르면 onSubmit 함수를 실행해라 */}
       <StInputGroup>
+
         <StInput
           type="text"
           name="title"
@@ -68,8 +70,9 @@ function Form() {
           required
         />
         {/* 내용에 들어오는 내용은 text 타입, body라는 이름을 가지고, todo의 body를 value로 만든다는 뜻 */}
-      
-      <StButton>전송</StButton>
+        
+        <StButton>전송</StButton>
+
       </StInputGroup>
     </StForm>
   );
@@ -92,15 +95,16 @@ const StForm = styled.form`
 `;
 
 const StInputGroup = styled.div`
-/* 제목과 내용 그 둘 */
-  align-items: left;
+/* 핸드폰모양 */
+  align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-  padding-top: 18px;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 23px 7px 15px 7px;
   height: 200px;
-  
+  /* background-color: rgb(255, 169, 169); */
+  border-radius: 7px;
 `;
 
 const StButton = styled.button`
@@ -134,9 +138,7 @@ const StInput = styled.input`
   color: black;
   padding-left: 15px;
   /* 첫번째 요소에만 오른쪽 여백 */
-  &:first-of-type {
-    margin-right: 50px;
-  }
+  
   /* 두번째 요소의 크기만 증가 */
   &:nth-of-type(2) {
     height: 110px;
