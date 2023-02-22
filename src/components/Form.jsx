@@ -58,7 +58,6 @@ function Form() {
         />
         {/* 제목에 들어오는 내용은 text 타입, title이라는 이름을 가지고, todo의 title을 value로 만든다는 뜻 */}
 
-        
         <StInput
           type="text"
           name="body"
@@ -70,8 +69,9 @@ function Form() {
           required
         />
         {/* 내용에 들어오는 내용은 text 타입, body라는 이름을 가지고, todo의 body를 value로 만든다는 뜻 */}
+      
+      <StButton>전송</StButton>
       </StInputGroup>
-      <StButton>전송하기</StButton>
     </StForm>
   );
 }
@@ -89,14 +89,15 @@ const StForm = styled.form`
   padding: 25px;
   background-color: #000000;
   background: url("https://img.wattpad.com/userbg/the-way-i-see-things.49589.jpg");
+  opacity: 0.85;
 `;
 
 const StInputGroup = styled.div`
 /* 제목과 내용 그 둘 */
-  align-items:left;
+  align-items: left;
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 10px;
   margin-top: 20px;
   padding-top: 25px;
   height: 200px;
@@ -111,16 +112,17 @@ const StButton = styled.button`
 border: none;
   border-radius: 7px;
   background-color: white;
-  width: 100px;
+  width: 60px;
   height: 35px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
   color: black;
-  margin-left: 27px;
+  margin-left: 135px;
+  margin-top:15px;
   /* 버튼에 마우스 올릴 때 반응 */
   &:hover {
-    width: 100px;
+    width: 60px;
     background-color: black;
     color: white;
   }

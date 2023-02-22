@@ -35,7 +35,7 @@ function List() {
                 <p>{todo.body}</p>
 
                 <StBtnBox>
-                  <StBtn onClick={() => onDelete(todo.id)}>삭 제</StBtn>
+                  <StBtn onClick={() => onDelete(todo.id)}>삭제</StBtn>
                 </StBtnBox>
                 
               </StTodoBox>
@@ -72,8 +72,8 @@ const StTodoBox = styled.div`
   border: solid 2px #1b1b1b;
   border-radius: 9px;
   // 배경색만 투명도 조절(만약 전체 투명도 조절하고 싶으면 opacity: 0.5;)
-  background-color: #fc002a;
   background: url("https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcvGeIc%2Fbtr0dpMYMzq%2FcxPkbYdT6HFBRBWM1b9Ilk%2Fimg.png");
+  opacity: 0.9;
   color: white;
   font-size: 1.1rem;
   padding: 20px 25px 0px 25px;
@@ -88,7 +88,7 @@ const StBtn = styled.button`
   box-sizing: border-box;
   border-radius: 10px;
   border: none;
-  width: 90px;
+  width: 60px;
   height: 35px;
   cursor: pointer;
 

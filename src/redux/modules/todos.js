@@ -32,7 +32,7 @@ export const updateTodo = (payload) => {
 // 초기값
 const initialState = [
   { id: 1, title: "고양이", body: "저는 고양이입니다.", isDone: false },
-  { id: 2, title: "세령이", body: "어떤가요? 제가 잘 만들었나요?", isDone: false },
+  { id: 2, title: "세령이", body: "어떤가요 제가 잘 만들었나요", isDone: false },
   { id: 3, title: "짱구", body: "울라울라..", isDone: false },
 ];
 
