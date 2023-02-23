@@ -80,6 +80,8 @@ function Form() {
 
 export default Form;
 
+
+
 const StForm = styled.form`
  /* 백그라운드 사진이 있는 곳의 크기 */
   display: flex;

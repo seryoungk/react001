@@ -15,6 +15,7 @@ function Layout({ children }) {
     )
 }
 export default Layout;
+
 const StBackground = styled.div`
     background-color: #000000;
 

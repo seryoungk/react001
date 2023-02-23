@@ -3,9 +3,10 @@ const ADD_TODO = "todos/ADD_TODO";
 const DELETE_TODO = "todos/DELETE_TODO";
 
 // Action Creator
+// *action creator마다 payload 콘솔 찍으면 다 다른 값이 출력됨
+
 // Todo를 추가하는 action creator
 export const addTodo = (payload) => {
-  // *action creator마다 payload 콘솔 찍으면 다 다른 값이 출력됨(잊지말자)
   return {
     type: ADD_TODO,
     payload,
@@ -32,16 +33,13 @@ const initialState = [
 const todos = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
-      // 기존 state를 복제해서 그 뒤에 새로운 객체를 추가해준다.
       const newTodo = [...state, action.payload];
       return newTodo;
 
     case DELETE_TODO:
-      // filter를 통해 id가 일치하는 내용들을 삭제!
       const remainedTodo = state.filter((todo) => todo.id !== action.payload);
       return remainedTodo;
-    // return state.filter(todo => (todo.id !== action.payload)) //0803에러발견> 아이템을 삭제 후 새로운 내용을 추가하면 id가 3으로 초기화
-
+  
     default:
       return state;
   }

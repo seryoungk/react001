@@ -56,6 +56,7 @@ const StListBox = styled.div`
   align-items: center;
   gap: 24px;
 `;
+
 const StTodoBox = styled.div`
   width: 150px;
   height: 219px;
